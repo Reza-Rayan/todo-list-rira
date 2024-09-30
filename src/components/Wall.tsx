@@ -79,12 +79,24 @@ const Wall = () => {
     }
   };
 
+  // Edit Note Fn
+  const editNote = (id: string, title: string, deadline?: Date) => {
+    const updatedNotes = notes.map((note) => {
+      if (note.id === id) {
+        return { ...note, title, deadline };
+      }
+      return note;
+    });
+    setnotes(updatedNotes);
+  };
+  // End here
+
   return (
     <div>
       <AddNote addNote={addNote} newNote={newNote} setNewNote={setNewNote} />
       <div className="my-10 grid grid-cols-1 items-center justify-center w-full">
         {notes?.length === 0 && (
-          <h2 className="text-center text-xl">تسکی وجود ندارد</h2>
+          <h2 className="text-center text-xl">نوتی وجود ندارد</h2>
         )}
       </div>
       <ul className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -92,6 +104,7 @@ const Wall = () => {
           notes={notes}
           toggleComplete={toggleComplete}
           removeNote={removeNote}
+          editNote={editNote} // Pass editNote prop
           onDragStart={onDragStart}
           onDrop={onDrop}
         />

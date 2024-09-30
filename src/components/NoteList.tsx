@@ -5,8 +5,9 @@ interface NoteListProps {
   notes: Note[];
   removeNote: any;
   toggleComplete: any;
-  onDragStart: (index: number) => void; // Add drag start handler
-  onDrop: (draggedIndex: number, targetIndex: number) => void; // Add drop handler
+  onDragStart: (index: number) => void;
+  onDrop: (draggedIndex: number, targetIndex: number) => void;
+  editNote: (id: string, title: string, deadline?: Date) => void;
 }
 
 const NoteList = ({
@@ -15,6 +16,7 @@ const NoteList = ({
   toggleComplete,
   onDragStart,
   onDrop,
+  editNote,
 }: NoteListProps) => {
   return (
     <>
@@ -27,6 +29,7 @@ const NoteList = ({
           index={index}
           onDragStart={onDragStart}
           onDrop={onDrop}
+          editNote={editNote}
         />
       ))}
     </>

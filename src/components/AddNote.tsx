@@ -24,7 +24,7 @@ const AddNote = ({ newNote, setNewNote, addNote }: AddNoteProps) => {
         value={newNote}
         onChange={(e) => setNewNote(e.target.value)}
         className="bg-[#21212170] lg:w-1/2  py-2 px-4 rounded-lg"
-        placeholder="تسک جدید را وارد نمایید"
+        placeholder="نوت جدید را وارد نمایید"
       />
       <input
         type="date"
