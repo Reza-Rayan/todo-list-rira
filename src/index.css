@@ -9,7 +9,26 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: vazirFont;
+  src: url("/public/fonts/Vazirmatn-Bold.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: vazirFont;
+  src: url("/public/fonts/Vazirmatn-Medium.woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: vazirFont;
+  src: url("/public/fonts/Vazirmatn-Light.woff2");
+  font-weight: 300;
+}
+
 body {
+  font-family: vazirFont;
   background-image: url("/images/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,17 +1,10 @@
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+
 // Icons
 import { IoMdAdd } from "react-icons/io";
 
-const AddTask = () => {
+const AddTask = ({ onSubmit }: any) => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data: any) => {
-    if (data.title === "") {
-      toast.error("لطفا عنوان را وارد کنید");
-    } else {
-      console.log(data);
-    }
-  };
 
   return (
     <>
