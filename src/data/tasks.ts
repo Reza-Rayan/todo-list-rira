@@ -10,7 +10,7 @@ export const tasks: Task[] = [
     {
       id: 2,
       title: " کد ریکت بزنم",
-      completed: false,
+      completed: true,
       date: "1403/07/8",
     },
   ];

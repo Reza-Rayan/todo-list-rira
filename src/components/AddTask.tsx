@@ -1,32 +1,26 @@
-import { useForm } from "react-hook-form";
+import { IoIosAdd } from "react-icons/io";
 
-// Icons
-import { IoMdAdd } from "react-icons/io";
-
-const AddTask = ({ onSubmit }: any) => {
-  const { register, handleSubmit } = useForm();
-
+interface AddTaskProps {
+  newTask: string;
+  setNewTask: any;
+  addTask: any;
+}
+const AddTask = ({ newTask, setNewTask, addTask }: AddTaskProps) => {
   return (
-    <>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex gap-4 justify-center"
+    <div className="flex justify-center my-6 gap-x-4">
+      <input
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        className="bg-[#21212170] lg:w-3/4 py-2 px-4 rounded-lg"
+      />
+      <button
+        onClick={addTask}
+        className="bg-indigo-600 px-2 rounded-lg border border-indigo-600 transition-all hover:bg-transparent"
       >
-        <input
-          type="text"
-          className="bg-[#21212180] p-4 text-white rounded-lg w-1/2"
-          placeholder="عنوان تسک را وارد نمايید"
-          id="title"
-          {...register("title")}
-        />
-        <button
-          type="submit"
-          className="bg-indigo-600 text-white p-4 rounded-lg border border-indigo-600 transition-all hover:bg-transparent"
-        >
-          <IoMdAdd />
-        </button>
-      </form>
-    </>
+        <IoIosAdd fontSize={30} />
+      </button>
+    </div>
   );
 };
 
